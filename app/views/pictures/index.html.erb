@@ -1,0 +1,26 @@
+<h1>投稿一覧</h1>
+<div class="container">
+  <div class="row">
+    <div class=" col-xs-12 picture-panel ">
+      <%= link_to '新規ブログを作成する', new_picture_path %>
+    </div>
+
+    <% @pictures.each do |picture| %>
+      <div class="col-xs-12 picture-panel">
+        <p><%= picture.user.name %></p>
+        <p><%= picture.content %></p>
+        <% if picture.image.url != nil %>
+          <p><%= image_tag picture.image.url %></p>
+        <% end %>
+
+        <% unless picture.user_id == current_user.id %>
+          <% if nil != picture.favorite_users.find_by(id:current_user.id) %>
+            <%= link_to 'お気に入り解除する', favorite_path(id: current_user.favorites.find_by(picture_id: picture.id)), method: :delete, class: 'btn btn-danger' %>
+          <% else %>
+            <%= link_to 'お気に入りする', favorites_path(picture_id: picture.id), method: :post, class: 'btn btn-primary' %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h3>以下の内容で、送信する。</h3>
+<div class="container">
+  <div class="form-group">
+      <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
+        <%= form.hidden_field :content ,class:'form-control'%>
+        <p><%= @picture.content %></p>
+        <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+        <%= form.hidden_field :image_cache ,class:'form-control'%>
+        <div class="form-group">
+        <%= form.submit  "登録する" ,class:'btn btn-default'%>
+        </div>
+      <% end %>
+      <%= form_with(model: @picture, url: new_picture_path, local: true, method: 'get') do |form| %>
+        <%= form.hidden_field :content %>
+        <%= form.submit "戻る",name: 'back' %>
+      <% end %>
+  </div>
+</div>

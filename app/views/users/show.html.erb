@@ -1,0 +1,37 @@
+<h1><%= @user.name %>のマイページ</h1>
+
+<div class="container">
+  <div class="row">
+    <div class=" col-xs-12 picture-panel ">
+      <%= link_to '新規ブログを作成する', new_picture_path %>
+    </div>
+    <% @user.pictures.each do |picture| %>
+      <div class="col-xs-12 picture-panel">
+        <p><%= picture.user.name %></p>
+        <p><%= picture.content %></p>
+        <% if picture.image.url != nil %>
+          <p><%= image_tag picture.image.url %></p>
+        <% end %>
+        <div class="picture-links">
+          <%= link_to 'Show', picture, class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_picture_path(picture), class: 'btn btn-info' %> |
+          <%= link_to 'Destroy', picture, method: :delete, data: { confirm: '本当に削除しますか?' }, class: 'btn btn-danger' %>
+        </div>
+       </div>
+    <% end %>
+  </div>
+</div>
+<h1>お気に入り投稿</h1>
+<div class="container">
+    <div class="row">
+        <% @user.favorites.each do |favorite| %>
+          <div class="col-xs-12 picture-panel">
+            <p><%= favorite.picture.user.name %></p>
+            <p><%= favorite.picture.content %></p>
+            <% if favorite.picture.image.url != nil %>
+              <p><%= image_tag favorite.picture.image.url %></p>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+</div>

@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
   def create
     @picture = current_user.pictures.build(picture_params)
     if @picture.save
+     ConfirmMailer.confirm_mail(@picture).deliver
      redirect_to pictures_path, notice: "ブログを作成しました！"
     else
      render 'new'

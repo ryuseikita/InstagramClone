@@ -24,11 +24,14 @@
         			<ul class="nav navbar-nav">
                 <li>
                     <% if current_user.present? %>
-                      <%= link_to current_user.name, user_path(current_user.id) ,class:'nav-item' %>
+                      <%= link_to current_user.name, user_path(current_user.id)%>
                     <% end %>
                 </li>
         			</ul>
               <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= link_to "お気に入りページ", favorite_users_path %>
+                </li>
                 <li>
                   <% if logged_in? %>
                     <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>

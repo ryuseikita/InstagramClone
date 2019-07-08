@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create, :destroy,:show]
+  resources :users, only: [:new, :create, :destroy,:show] do
+    collection do
+      get :favorite
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :instagrams, only: [:index]
   # resources :favorites, only: [:create, :destroy]

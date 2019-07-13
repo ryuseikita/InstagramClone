@@ -21,17 +21,3 @@
     <% end %>
   </div>
 </div>
-<h1>お気に入り投稿</h1>
-<div class="container">
-    <div class="row">
-        <% @user.favorites.each do |favorite| %>
-          <div class="col-xs-12 picture-panel">
-            <p><%= favorite.picture.user.name %></p>
-            <p><%= favorite.picture.content %></p>
-            <% if favorite.picture.image.url != nil %>
-              <p><%= image_tag favorite.picture.image.url %></p>
-            <% end %>
-          </div>
-        <% end %>
-    </div>
-</div>

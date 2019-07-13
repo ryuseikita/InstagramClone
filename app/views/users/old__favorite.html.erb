@@ -1,0 +1,14 @@
+<h1>お気に入り投稿</h1>
+<div class="container">
+    <div class="row">
+        <% @user.each do |favorite| %>
+          <div class="col-xs-12 picture-panel">
+            <p><%= favorite.user.name %></p>
+            <p><%= favorite.content %></p>
+            <% if favorite.image.url != nil %>
+              <p><%= image_tag favorite.image.url %></p>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+</div>

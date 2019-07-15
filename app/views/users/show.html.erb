@@ -6,9 +6,7 @@
       <% if @user.profile.image.url != nil %>
         <p><%= image_tag @user.profile.image.url ,class:"img-responsive center-block"%></p>
       <% elsif%>
-      　<div class='center-block'>
         <p class='default_image'>プロフィールを編集して画像を設定してください</p>
-        </div>
       <% end %>
       <p><%= @user.profile.myprofile %></p>
       <% if @user.id == current_user.id %>

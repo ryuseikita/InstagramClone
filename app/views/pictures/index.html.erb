@@ -7,7 +7,7 @@
 
     <% @pictures.each do |picture| %>
       <div class="col-xs-12 picture-panel">
-        <p><%= picture.user.name %></p>
+        <p><%= link_to picture.user.name, user_path(picture.user.id)%></p>
         <p><%= picture.content %></p>
         <% if picture.image.url != nil %>
           <p><%= image_tag picture.image.url %></p>

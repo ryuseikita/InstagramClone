@@ -1,12 +1,13 @@
 body {
     background-color: #dcdcdc;
+    margin-bottom: 60px;
 }
 
 .picture-panel{
     /* background-color: #FFFFFF; */
     margin-bottom: 10px;
     font-size: 200%;
-    border : solid 1px #333 
+    border : solid 1px #333
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -17,30 +18,22 @@ body {
   color: black;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
+p{
+  word-wrap:break-word;
+}
+
 html {
   position: relative;
   min-height: 100%;
 }
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #f5f5f5;
 }
-
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
 .container {
   width: auto;
   max-width: 680px;

@@ -2,11 +2,11 @@
 
 <div class="container">
   <div class="row">
-    <div class=" col-xs-12 picture-panel ">
+    <div class=" col-xs-12  picture-panel">
       <% if @user.profile.image.url != nil %>
-        <p><%= image_tag @user.profile.image.url %></p>
+        <p><%= image_tag @user.profile.image.url ,class:"img-responsive center-block"%></p>
       <% end %>
-      <p><%= @user.profile.profile %></p>
+      <p><%= @user.profile.myprofile %></p>
       <%= link_to 'プロフィールを編集する', edit_profile_path %>
     </div>
 

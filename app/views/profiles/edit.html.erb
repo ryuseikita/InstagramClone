@@ -12,11 +12,11 @@
       <div class="form-group">
         <%= form_with(model: @profile, local: true ,url: profile_path ) do |form| %>
             <%= form.label :image %>
-            <p><%= image_tag(@profile.image.url) if @profile.image && @profile.image.url %></p>
+            <p><%= image_tag(@profile.image.url) if @profile.image && @profile.image.url%></p>
             <%= form.file_field :image%>
             <%= form.hidden_field :image_cache,class:'form-control' %>
             <%= form.label :profile %>
-            <%= form.text_area :profile,class:'form-control' %>
+            <%= form.text_area :myprofile,class:'form-control' %>
 
             <%= form.submit %>
         <% end %>

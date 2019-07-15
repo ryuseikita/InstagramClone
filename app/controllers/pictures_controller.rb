@@ -32,6 +32,7 @@ class PicturesController < ApplicationController
 
   def update
     if @picture.update(picture_params)
+      binding.pry
      redirect_to user_path(current_user.id), notice: "投稿を作成しました！"
     else
      render 'edit'

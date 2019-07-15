@@ -14,4 +14,5 @@ module ApplicationHelper
        picture_path
      end
    end
+
 end

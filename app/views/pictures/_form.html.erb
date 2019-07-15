@@ -10,7 +10,7 @@
         </div>
       <% end %>
       <div class="form-group">
-        <%= form_with(model: @picture, local: true ,url: choose_new_or_edit ) do |form| %>
+        <%= form_with(model: @picture, local: true ,url: profile_choose_new_or_edit ) do |form| %>
             <%= form.label :content %>
             <%= form.text_field :content,class:'form-control' %>
             <%= form.label :image %>

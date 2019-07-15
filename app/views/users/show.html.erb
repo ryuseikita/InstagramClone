@@ -3,6 +3,14 @@
 <div class="container">
   <div class="row">
     <div class=" col-xs-12 picture-panel ">
+      <% if @user.profile.image.url != nil %>
+        <p><%= image_tag @user.profile.image.url %></p>
+      <% end %>
+      <p><%= @user.profile.profile %></p>
+      <%= link_to 'プロフィールを編集する', edit_profile_path %>
+    </div>
+
+    <div class=" col-xs-12 picture-panel ">
       <%= link_to '新規ブログを作成する', new_picture_path %>
     </div>
     <% @user.pictures.each do |picture| %>

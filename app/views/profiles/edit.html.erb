@@ -1,0 +1,25 @@
+<div class="container">
+      <% if @profile.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= @profile.errors.count %>件のエラーがあります。</h2>
+          <ul>
+          <% @profile.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <%= form_with(model: @profile, local: true ,url: profile_path ) do |form| %>
+            <%= form.label :image %>
+            <p><%= image_tag(@profile.image.url) if @profile.image && @profile.image.url %></p>
+            <%= form.file_field :image%>
+            <%= form.hidden_field :image_cache,class:'form-control' %>
+            <%= form.label :profile %>
+            <%= form.text_area :profile,class:'form-control' %>
+
+            <%= form.submit %>
+        <% end %>
+      </div>
+    <%= link_to "マイページに戻る", user_path(current_user.id),class:'btn btn-default' %>
+</div>

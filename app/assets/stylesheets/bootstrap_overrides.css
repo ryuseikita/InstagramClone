@@ -6,6 +6,7 @@ body {
     /* background-color: #FFFFFF; */
     margin-bottom: 10px;
     font-size: 200%;
+    border : solid 1px #333 
 }
 
 .navbar-default .navbar-nav>li>a {

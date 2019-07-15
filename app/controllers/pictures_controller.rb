@@ -1,7 +1,8 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only:[:show,:edit,:update,:destroy]
+  before_action :set_picture,:login_check, only:[:show,:edit,:update,:destroy]
 
   def index
+    login_check
     @pictures = Picture.all
   end
 
@@ -28,11 +29,16 @@ class PicturesController < ApplicationController
   end
 
   def edit
+    unless @picture.user.id == current_user.id
+      redirect_to pictures_path and return
+    end
   end
 
   def update
+    unless @picture.user.id == current_user.id
+      redirect_to pictures_path and return
+    end
     if @picture.update(picture_params)
-      binding.pry
      redirect_to user_path(current_user.id), notice: "投稿を作成しました！"
     else
      render 'edit'
@@ -40,6 +46,9 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+    unless @picture.user.id == current_user.id
+      redirect_to pictures_path and return
+    end
     @picture.destroy
     redirect_to pictures_path,notice:"投稿を削除しました！"
   end
@@ -57,6 +66,12 @@ class PicturesController < ApplicationController
 
   def set_picture
     @picture = Picture.find(params[:id])
+  end
+
+  def login_check
+    unless logged_in?
+      redirect_to new_session_path
+    end
   end
 
 end

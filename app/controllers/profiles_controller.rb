@@ -1,8 +1,10 @@
 class ProfilesController < ApplicationController
-  before_action :user_check , only:[:edit,:update]
 
   def edit
-   @profile = Profile.where(user_id:params[:id]).first
+    if params[:id].to_i != current_user.id
+      redirect_to pictures_path,notice:"エラー：もう一度やり直してください。"
+    end
+    @profile = Profile.where(user_id:params[:id]).first
   end
 
   def create
@@ -24,11 +26,5 @@ class ProfilesController < ApplicationController
 
    def profile_params
      params.require(:profile).permit(:image,:image_cache,:myprofile)
-   end
-
-   def user_check
-     if params[:id].to_i != current_user.id
-       redirect_to pictures_path,notice:"エラー：もう一度やり直してください。"
-     end
    end
 end

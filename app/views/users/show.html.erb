@@ -7,7 +7,9 @@
         <p><%= image_tag @user.profile.image.url ,class:"img-responsive center-block"%></p>
       <% end %>
       <p><%= @user.profile.myprofile %></p>
-      <%= link_to 'プロフィールを編集する', edit_profile_path %>
+      <% if @user.id == current_user.id %>
+        <%= link_to 'プロフィールを編集する', edit_profile_path %>
+      <% end %>
     </div>
 
     <div class=" col-xs-12 picture-panel ">

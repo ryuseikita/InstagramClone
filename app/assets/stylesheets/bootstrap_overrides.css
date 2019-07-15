@@ -22,6 +22,15 @@ p{
   word-wrap:break-word;
 }
 
+.default_image{
+  font-size: 80%;
+  width: 400px;
+  height: 400px;
+  margin:auto;
+  background-color: white;
+  border : solid 1px #333
+}
+
 html {
   position: relative;
   min-height: 100%;

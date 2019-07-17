@@ -17,7 +17,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-byebug'
 gem 'faker'
-gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'jquery-rails'
 
 
 group :development, :test do

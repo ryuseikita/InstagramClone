@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'instagrams#index'
   resources :users, only: [:new, :create, :destroy,:show] do
     collection do
       get :favorite

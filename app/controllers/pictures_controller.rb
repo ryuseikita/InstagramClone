@@ -3,7 +3,7 @@ class PicturesController < ApplicationController
 
   def index
     login_check
-    @pictures = Picture.all
+    @pictures = Picture.all.order("created_at DESC")
   end
 
   def new

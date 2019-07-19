@@ -1,7 +1,7 @@
 <h1>お気に入り投稿</h1>
 <div class="container">
     <div class="row">
-        <% @user.favorites.each do |favorite| %>
+        <% @user.favorites.order('created_at DESC').each do |favorite| %>
           <div class="col-xs-12 picture-panel">
             <p><%= link_to favorite.picture.user.name, user_path(favorite.picture.user.id)%></p>
             <p><%= favorite.picture.content %></p>

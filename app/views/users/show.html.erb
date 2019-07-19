@@ -20,7 +20,7 @@
     <% end %>
 
     <h1><%= @user.name %>の投稿</h1>
-    <% @user.pictures.each do |picture| %>
+    <% @user.pictures.order('created_at DESC').each do |picture| %>
       <div class="col-xs-12 picture-panel">
         <p><%= picture.content %></p>
         <% if picture.image.url != nil %>

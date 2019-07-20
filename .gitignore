@@ -27,8 +27,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/public/uploads/tmp/*
-/public/picture/image/*
-/public/profile/image/*
+public/uploads/tmp/*
+public/picture/image/*
+public/profile/image/*
 
 .env

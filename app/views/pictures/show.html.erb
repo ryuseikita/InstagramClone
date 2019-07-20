@@ -7,7 +7,7 @@
       <p>投稿者名：<%= @picture.user.name %></p>
       <p><%= @picture.content %></p>
       <% if @picture.image.url != nil %>
-        <p><%= image_tag @picture.image.url %></p>
+        <p><%= image_tag @picture.image.url ,:size =>'400x400'%></p>
       <% end %>
     </div>
     <% unless @picture.user_id == current_user.id %>

@@ -12,7 +12,7 @@
       <div class="form-group">
         <%= form_with(model: @profile, local: true ,url: profile_path ) do |form| %>
             <%= form.label :image %>
-            <p><%= image_tag(@picture.image.url ,:size =>'400x400')if @profile.image && @profile.image.url%></p>
+            <p><%= image_tag(@picture.image.url ,class:'img-responsive center-block') if @profile.image && @profile.image.url%></p>
             <%= form.file_field :image%>
             <%= form.hidden_field :image_cache,class:'form-control' %>
             <%= form.label :profile %>

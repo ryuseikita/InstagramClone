@@ -2,4 +2,4 @@
 
 <h4>投稿内容の確認</h4>
 <h4><%= @picture.content %></h4>
-<p><%= image_tag(@picture.image.url,:size =>"400x400")if @picture.image && @picture.image.url %></p>
+<p><%= image_tag(@picture.image.url,class:'img-responsive center-block')if @picture.image && @picture.image.url %></p>

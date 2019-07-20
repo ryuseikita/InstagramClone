@@ -4,7 +4,7 @@
       <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
         <%= form.hidden_field :content ,class:'form-control'%>
         <p><%= @picture.content %></p>
-        <%= image_tag(@picture.image.url ,:size =>'400x400') if @picture.image && @picture.image.url %>
+        <%= image_tag(@picture.image.url ,class:'img-responsive center-block') if @picture.image && @picture.image.url %>
         <%= form.hidden_field :image_cache ,class:'form-control'%>
         <div class="form-group">
         <%= form.submit  "登録する" ,class:'btn btn-default'%>

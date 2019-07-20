@@ -10,7 +10,7 @@
         <p><%= link_to picture.user.name, user_path(picture.user.id)%></p>
         <p><%= picture.content %></p>
         <% if picture.image.url != nil %>
-          <p><%= image_tag picture.image.url , :size =>'400x400' %></p>
+          <p><%= image_tag picture.image.url ,class:'img-responsive center-block'%></p>
         <% end %>
 
         <% unless picture.user_id == current_user.id %>

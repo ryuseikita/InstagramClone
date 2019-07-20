@@ -14,7 +14,7 @@
             <%= form.label :content %>
             <%= form.text_field :content,class:'form-control' %>
             <%= form.label :image %>
-            <p><%= image_tag(@picture.image.url,:size =>"400x400") if @picture.image && @picture.image.url %></p>
+            <p><%= image_tag(@picture.image.url,class:'img-responsive center-block') if @picture.image && @picture.image.url %></p>
             <%= form.file_field :image%>
             <%= form.hidden_field :image_cache,class:'form-control' %>
             <%= form.submit %>

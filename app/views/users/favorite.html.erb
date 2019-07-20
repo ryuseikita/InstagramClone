@@ -6,7 +6,7 @@
             <p><%= link_to favorite.picture.user.name, user_path(favorite.picture.user.id)%></p>
             <p><%= favorite.picture.content %></p>
             <% if favorite.picture.image.url != nil %>
-              <p><%= image_tag favorite.picture.image.url,:size =>'400x400'%></p>
+              <p><%= image_tag favorite.picture.image.url,class:'img-responsive center-block'%></p>
             <% end %>
           </div>
         <% end %>

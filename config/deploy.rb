@@ -6,7 +6,7 @@ set :application, 'InstagramClone'
 
 # cloneするgitのレポジトリ
 # （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/RyuseiSuzuki/InstagramClone.git'
+set :repo_url, 'https://github.com/RyuseiSuzuki/InstagramClone'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'

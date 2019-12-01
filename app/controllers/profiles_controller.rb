@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
     if params[:id].to_i != current_user.id
       redirect_to pictures_path,notice:"エラー：もう一度やり直してください。"
     end
-    @profile = Profile.where(user_id:params[:id]).first
+    @profile = Profile.find(params[:id])
   end
 
   def create
